@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Bilibili-Wallpapers-3.jpg",
+      "filename" : "top-shelf-wide.jpg",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
-      "filename" : "Bilibili-Wallpapers-3@2x.jpg",
+      "filename" : "top-shelf-wide@2x.jpg",
       "idiom" : "tv",
       "scale" : "2x"
     }
