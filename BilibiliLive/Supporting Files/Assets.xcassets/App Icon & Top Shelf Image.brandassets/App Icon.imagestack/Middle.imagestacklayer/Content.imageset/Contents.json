@@ -1,13 +1,8 @@
 {
   "images" : [
     {
-      "idiom" : "tv",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "3.jpg",
-      "idiom" : "tv",
-      "scale" : "2x"
+      "filename" : "app-icon.jpg",
+      "idiom" : "tv"
     }
   ],
   "info" : {
