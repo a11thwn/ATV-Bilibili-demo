@@ -13,7 +13,18 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="LaunchImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LaunchImageView" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="top-constraint"/>
+                            <constraint firstItem="LaunchImageView" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="leading-constraint"/>
+                            <constraint firstAttribute="trailing" secondItem="LaunchImageView" secondAttribute="trailing" id="trailing-constraint"/>
+                            <constraint firstAttribute="bottom" secondItem="LaunchImageView" secondAttribute="bottom" id="bottom-constraint"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                     </view>
                 </viewController>
@@ -21,4 +32,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchImage" width="1920" height="1080"/>
+    </resources>
 </document>
