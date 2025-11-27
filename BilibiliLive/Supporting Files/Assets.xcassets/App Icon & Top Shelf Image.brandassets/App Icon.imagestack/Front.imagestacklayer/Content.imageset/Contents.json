@@ -2,7 +2,13 @@
   "images" : [
     {
       "filename" : "app-icon.jpg",
-      "idiom" : "tv"
+      "idiom" : "tv",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "app-icon@2x.jpg",
+      "idiom" : "tv",
+      "scale" : "2x"
     }
   ],
   "info" : {
