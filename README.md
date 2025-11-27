@@ -26,9 +26,7 @@
 - HDR播放
 - 字幕
 
- ![](imgs/1.jpg)
- ![](imgs/2.jpg)
- ![](imgs/3.png)
+ ![](imgs/IMG_8570_Original.jpg)
 
 
 
@@ -37,7 +35,7 @@
 
 ### 未签名iPA文件
 
-从 https://github.com/yichengchen/ATV-Bilibili-demo/releases/tag/nightly 获取基于最新代码构建的
+从 https://github.com/a11thwn/ATV-Bilibili-demo/releases/tag/nightly 获取基于最新代码构建的
 
 ### Links
 
