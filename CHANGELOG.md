@@ -1,5 +1,57 @@
 # Changelog
 
+## [2026-08-13] - Build 7 同步上游并发布 TestFlight
+
+### 问题描述
+
+- 本地 fork 尚未包含原项目 `yichengchen/ATV-Bilibili-demo` 的近期更新
+- 本地保留了签名、Bundle ID、应用名称、图标、启动图和 Top Shelf 等个性化内容，不能被上游版本覆盖
+- TestFlight 需要使用未重复的构建号，本次发布构建号为 7
+
+### 分析原因
+
+- `origin/main` 与 `upstream/main` 已产生分叉：本地保留 12 个个性化提交，上游新增 39 个提交
+- 直接覆盖或 rebase 容易改写本地历史；未提交修改存在时直接 pull 也会被 Git 拒绝
+- 仓库中已提交的构建号仍为 5，需要同时更新 Xcode 工程和 `Info.plist`
+
+### 解决方案
+
+- 使用三方合并将 `upstream/main` 合入本地 `main`，不重写本地 12 个个性化提交
+- 保留 Team `ZU6TTDY78P`、Bundle ID `com.zhi.tv.BilibiliLive`、应用名称及定制资源
+- 将 Debug、Release 和 `Info.plist` 中的构建号统一更新为 7
+- 完成 Release 归档、签名校验，并上传至 App Store Connect
+
+### 改动内容
+
+- 同步上游 39 个提交，主要包括：
+  - 新增 TV 推荐独立页面、关注页沉浸式播放、Featured 内容安全过滤和播放器发现面板
+  - 新增播放器内画质选择、直播线路选择、视频选集范围跳转和 1.75 倍速
+  - 新增导航栏自定义排序、热搜入口及 UP 主空间按播放量排序
+  - 改善海外网络高码率播放、PCDN 回退、播放预加载与取消竞态
+  - 修复关注页崩溃、退出播放后音频残留、连续播放清理、投屏及番剧花絮播放问题
+  - 升级 Swift Package 依赖并调整播放器、Feed 和 TabBar 结构
+- 更新 `BilibiliLive.xcodeproj/project.pbxproj`：两处 `CURRENT_PROJECT_VERSION` 从 5 更新为 7
+- 更新 `BilibiliLive/Supporting Files/Info.plist`：`CFBundleVersion` 从 5 更新为 7
+
+### 影响范围
+
+- 涉及 tvOS 推荐、关注、搜索、个人中心、播放器、直播、投屏和导航栏
+- 最低系统版本仍为 tvOS 16.0，应用版本仍为 1.0
+- 本机签名、Bundle ID、应用名称、图标、启动图和 Top Shelf 定制保持不变
+
+### 验证结果
+
+- Xcode 26.3 Release Archive 成功，产物为 arm64 tvOS App Archive
+- 归档信息确认版本 `1.0 (7)`、Bundle ID `com.zhi.tv.BilibiliLive`、Team `ZU6TTDY78P`
+- `codesign --verify --deep --strict` 校验通过
+- 2026-08-13 15:12（GMT+8）已成功上传至 Apple，等待 App Store Connect 完成处理
+
+### 后续计划
+
+- 在 App Store Connect 中确认构建 7 处理完成并进入 TestFlight 可测试状态
+
+---
+
 ## Build 5 — 2026-02-11
 
 ### 合并上游更新
